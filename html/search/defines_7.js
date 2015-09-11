@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['g3code_5feof',['G3CODE_EOF',['../t4_8h.html#a71bc59571a5e61f8d5c367ff86aa8f5d',1,'G3CODE_EOF():&#160;t4.h'],['../tif__fax3_8c.html#a71bc59571a5e61f8d5c367ff86aa8f5d',1,'G3CODE_EOF():&#160;tif_fax3.c']]],
+  ['g3code_5feol',['G3CODE_EOL',['../t4_8h.html#af6dc5fd5708afa9ca090d01c2ec40315',1,'G3CODE_EOL():&#160;t4.h'],['../tif__fax3_8c.html#af6dc5fd5708afa9ca090d01c2ec40315',1,'G3CODE_EOL():&#160;tif_fax3.c']]],
+  ['g3code_5fincomp',['G3CODE_INCOMP',['../t4_8h.html#a7c2b902da780d3d3fda286b540c7f40d',1,'G3CODE_INCOMP():&#160;t4.h'],['../tif__fax3_8c.html#a7c2b902da780d3d3fda286b540c7f40d',1,'G3CODE_INCOMP():&#160;tif_fax3.c']]],
+  ['g3code_5finvalid',['G3CODE_INVALID',['../t4_8h.html#ade8a3a8121624bb201e5089e7dac4685',1,'G3CODE_INVALID():&#160;t4.h'],['../tif__fax3_8c.html#ade8a3a8121624bb201e5089e7dac4685',1,'G3CODE_INVALID():&#160;tif_fax3.c']]],
+  ['getbits',['GetBits',['../tif__fax3_8h.html#ad76ef429faf468b9d16c8592128b7373',1,'tif_fax3.h']]],
+  ['getnextcode',['GetNextCode',['../tif__lzw_8c.html#ac46e97d3731a83cafda401b39e79f243',1,'tif_lzw.c']]],
+  ['getnextcodecompat',['GetNextCodeCompat',['../tif__lzw_8c.html#af0b2b8851d52ae10b9d963ea227507f5',1,'tif_lzw.c']]],
+  ['grayresponseunit_5f100000s',['GRAYRESPONSEUNIT_100000S',['../tiff_8h.html#a5f29c809d6838dc8354689b537e46e6f',1,'tiff.h']]],
+  ['grayresponseunit_5f10000s',['GRAYRESPONSEUNIT_10000S',['../tiff_8h.html#a7b81faa1a3796a77c0459315258829ac',1,'tiff.h']]],
+  ['grayresponseunit_5f1000s',['GRAYRESPONSEUNIT_1000S',['../tiff_8h.html#a89f519e4b292f42e4c2b59c3d73b8b45',1,'tiff.h']]],
+  ['grayresponseunit_5f100s',['GRAYRESPONSEUNIT_100S',['../tiff_8h.html#ab895676545a6d1523ad97faac24feb01',1,'tiff.h']]],
+  ['grayresponseunit_5f10s',['GRAYRESPONSEUNIT_10S',['../tiff_8h.html#afe563b159b055b78e9e5b1d748da794d',1,'tiff.h']]],
+  ['grey',['GREY',['../tif__getimage_8c.html#a466bcf9c6a8b861770207e76fe3849c7',1,'tif_getimage.c']]],
+  ['group3opt_5f2dencoding',['GROUP3OPT_2DENCODING',['../tiff_8h.html#a1fbdb2be3676c8c55e6242b3ef06663a',1,'tiff.h']]],
+  ['group3opt_5ffillbits',['GROUP3OPT_FILLBITS',['../tiff_8h.html#a829abc5476505fd12d4b6d4517494135',1,'tiff.h']]],
+  ['group3opt_5funcompressed',['GROUP3OPT_UNCOMPRESSED',['../tiff_8h.html#a396f1739bb4358d656cff5672725e42c',1,'tiff.h']]],
+  ['group4opt_5funcompressed',['GROUP4OPT_UNCOMPRESSED',['../tiff_8h.html#ae076050c3767125c306135031148659d',1,'tiff.h']]]
+];

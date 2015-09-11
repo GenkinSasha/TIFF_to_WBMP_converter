@@ -1,0 +1,79 @@
+# Project: tiff2wbmp
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = TIFF_codec/tif_aux.o TIFF_codec/tif_close.o TIFF_codec/tif_compress.o TIFF_codec/tif_dir.o TIFF_codec/tif_dirinfo.o TIFF_codec/tif_dirread.o TIFF_codec/tif_error.o TIFF_codec/tif_fax3.o TIFF_codec/tif_fax3sm.o TIFF_codec/tif_read.o TIFF_codec/tif_strip.o TIFF_codec/tif_version.o TIFF_codec/tif_warning.o TIFF_codec/tif_win32.o source/main.o source/tiff_ARM32.o TIFF_codec/tif_swab.o TIFF_codec/tif_codec.o
+LINKOBJ  = TIFF_codec/tif_aux.o TIFF_codec/tif_close.o TIFF_codec/tif_compress.o TIFF_codec/tif_dir.o TIFF_codec/tif_dirinfo.o TIFF_codec/tif_dirread.o TIFF_codec/tif_error.o TIFF_codec/tif_fax3.o TIFF_codec/tif_fax3sm.o TIFF_codec/tif_read.o TIFF_codec/tif_strip.o TIFF_codec/tif_version.o TIFF_codec/tif_warning.o TIFF_codec/tif_win32.o source/main.o source/tiff_ARM32.o TIFF_codec/tif_swab.o TIFF_codec/tif_codec.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib32" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -s
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = tiff2wbmp.exe
+CXXFLAGS = $(CXXINCS) -Os -m32
+CFLAGS   = $(INCS) -Os -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+TIFF_codec/tif_aux.o: TIFF_codec/tif_aux.c
+	$(CC) -c TIFF_codec/tif_aux.c -o TIFF_codec/tif_aux.o $(CFLAGS)
+
+TIFF_codec/tif_close.o: TIFF_codec/tif_close.c
+	$(CC) -c TIFF_codec/tif_close.c -o TIFF_codec/tif_close.o $(CFLAGS)
+
+TIFF_codec/tif_compress.o: TIFF_codec/tif_compress.c
+	$(CC) -c TIFF_codec/tif_compress.c -o TIFF_codec/tif_compress.o $(CFLAGS)
+
+TIFF_codec/tif_dir.o: TIFF_codec/tif_dir.c
+	$(CC) -c TIFF_codec/tif_dir.c -o TIFF_codec/tif_dir.o $(CFLAGS)
+
+TIFF_codec/tif_dirinfo.o: TIFF_codec/tif_dirinfo.c
+	$(CC) -c TIFF_codec/tif_dirinfo.c -o TIFF_codec/tif_dirinfo.o $(CFLAGS)
+
+TIFF_codec/tif_dirread.o: TIFF_codec/tif_dirread.c
+	$(CC) -c TIFF_codec/tif_dirread.c -o TIFF_codec/tif_dirread.o $(CFLAGS)
+
+TIFF_codec/tif_error.o: TIFF_codec/tif_error.c
+	$(CC) -c TIFF_codec/tif_error.c -o TIFF_codec/tif_error.o $(CFLAGS)
+
+TIFF_codec/tif_fax3.o: TIFF_codec/tif_fax3.c
+	$(CC) -c TIFF_codec/tif_fax3.c -o TIFF_codec/tif_fax3.o $(CFLAGS)
+
+TIFF_codec/tif_fax3sm.o: TIFF_codec/tif_fax3sm.c
+	$(CC) -c TIFF_codec/tif_fax3sm.c -o TIFF_codec/tif_fax3sm.o $(CFLAGS)
+
+TIFF_codec/tif_read.o: TIFF_codec/tif_read.c
+	$(CC) -c TIFF_codec/tif_read.c -o TIFF_codec/tif_read.o $(CFLAGS)
+
+TIFF_codec/tif_strip.o: TIFF_codec/tif_strip.c
+	$(CC) -c TIFF_codec/tif_strip.c -o TIFF_codec/tif_strip.o $(CFLAGS)
+
+TIFF_codec/tif_version.o: TIFF_codec/tif_version.c
+	$(CC) -c TIFF_codec/tif_version.c -o TIFF_codec/tif_version.o $(CFLAGS)
+
+TIFF_codec/tif_warning.o: TIFF_codec/tif_warning.c
+	$(CC) -c TIFF_codec/tif_warning.c -o TIFF_codec/tif_warning.o $(CFLAGS)
+
+TIFF_codec/tif_win32.o: TIFF_codec/tif_win32.c
+	$(CC) -c TIFF_codec/tif_win32.c -o TIFF_codec/tif_win32.o $(CFLAGS)
+
+source/main.o: source/main.c
+	$(CC) -c source/main.c -o source/main.o $(CFLAGS)
+
+source/tiff_ARM32.o: source/tiff_ARM32.c
+	$(CC) -c source/tiff_ARM32.c -o source/tiff_ARM32.o $(CFLAGS)
+
+TIFF_codec/tif_swab.o: TIFF_codec/tif_swab.c
+	$(CC) -c TIFF_codec/tif_swab.c -o TIFF_codec/tif_swab.o $(CFLAGS)
+
+TIFF_codec/tif_codec.o: TIFF_codec/tif_codec.c
+	$(CC) -c TIFF_codec/tif_codec.c -o TIFF_codec/tif_codec.o $(CFLAGS)

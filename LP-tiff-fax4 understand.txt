@@ -1,0 +1,14 @@
+tiff_fax3.c:
+
+/*
+ * Decode the requested amount of G4-encoded data.
+ */
+
+static int 
+Fax4Decode(TIFF* tif, uint8* buf, tmsize_t occ, uint16 s)
+TIFFOpen(3TIFF)
+TIFFReadEncodedStrip(3TIFF)
+
+tif_read.c:
+int
+TIFFReadScanline(TIFF* tif, void* buf, uint32 row, uint16 sample)

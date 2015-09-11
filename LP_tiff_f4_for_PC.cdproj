@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<NDepend IsCProject="true" AppName="LP-tiff-f4_for_PC" Platform="DotNet">
+  <OutputDir KeepHistoric="True" KeepXmlFiles="True">D:\Sasha personal\lena\LP-tiff-f4_for_PC\CppDependOut</OutputDir>
+  <Projects />
+  <FrameworkProjects />
+  <Dirs />
+  <Report Kind="0" SectionsEnabled="45055" XslPath="" Flags="64512" />
+  <BuildComparisonSetting ProjectMode="DontCompare" BuildMode="MostRecentAnalysisResultAvailable" ProjectFileToCompareWith="" BuildFileToCompareWith="" NDaysAgo="1" FocusOnRecentRulesViolations="False" />
+  <BaselineInUISetting ProjectMode="DontCompare" BuildMode="MostRecentAnalysisResultAvailable" ProjectFileToCompareWith="" BuildFileToCompareWith="" NDaysAgo="1" FocusOnRecentRulesViolations="False" />
+  <CoverageFiles UncoverableAttribute="" />
+  <Plugins Plugin="true" Modernize="false" />
+  <TrendMetrics UseCustomLog="False" LogRecurrence="1" LogLabel="2" UseCustomDir="False" CustomDir="">
+    <Chart Name="Lines of Code" ShowInReport="True">
+      <Serie MetricName="# Lines of Code" MetricUnit="Loc" Color="#FF00BFFF" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="# Lines of Code (NotMyCode)" MetricUnit="Loc" Color="#FFA9A9A9" ChartType="Area" ScaleExp="0" />
+      <Serie MetricName="# Lines of Comments" MetricUnit="Lines" Color="#FF008000" ChartType="Line" ScaleExp="0" />
+    </Chart>
+    <Chart Name="Rules Violated" ShowInReport="True">
+      <Serie MetricName="# Rules" MetricUnit="Rules" Color="#FF66CDAA" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="# Rules Violated" MetricUnit="Rules" Color="#FFFF8C00" ChartType="Area" ScaleExp="0" />
+      <Serie MetricName="# Critical Rules Violated" MetricUnit="Rules" Color="#FFFF0000" ChartType="Area" ScaleExp="0" />
+    </Chart>
+    <Chart Name="Rules Violations" ShowInReport="True">
+      <Serie MetricName="# Rules Violations" MetricUnit="Violations" Color="#FFFF8C00" ChartType="Area" ScaleExp="0" />
+      <Serie MetricName="# Critical Rules Violations" MetricUnit="Violations" Color="#FFFF0000" ChartType="Area" ScaleExp="0" />
+    </Chart>
+    <Chart Name="Max" ShowInReport="True">
+      <Serie MetricName="Max Cyclomatic Complexity for Methods" MetricUnit="Paths" Color="#FFFF0000" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="Max # Lines of Code for Methods (JustMyCode)" MetricUnit="LoC" Color="#FF0000FF" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="Max Nesting Depth for Methods" MetricUnit="Scopes" Color="#FFFFD700" ChartType="Line" ScaleExp="0" />
+    </Chart>
+    <Chart Name="Average" ShowInReport="True">
+      <Serie MetricName="Average Cyclomatic Complexity for Methods" MetricUnit="Paths" Color="#FFFF0000" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="Average # Lines of Code for Methods" MetricUnit="LoC" Color="#FF0000FF" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="Average Nesting Depth for Methods" MetricUnit="Scopes" Color="#FFFFD700" ChartType="Line" ScaleExp="0" />
+    </Chart>
+    <Chart Name="Third-Party Usage" ShowInReport="True">
+      <Serie MetricName="# Third-Party Types Used" MetricUnit="Types" Color="#FF0000FF" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="# Third-Party Methods Used" MetricUnit="Methods" Color="#FFFF0000" ChartType="Line" ScaleExp="0" />
+      <Serie MetricName="# Third-Party Projects Used" MetricUnit="Projects" Color="#FF646464" ChartType="Line" ScaleExp="1" />
+      <Serie MetricName="# Third-Party Fields Used" MetricUnit="Fields" Color="#FFFFD700" ChartType="Line" ScaleExp="1" />
+    </Chart>
+  </TrendMetrics>
+  <SourceFileRebasing FromPath="" ToPath="" /><Queries>
+    <Group Name="Code Quality" Active="True" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>Files too big - critical</Name>
+warnif count > 0 from f in Files where 
+   f.NbLinesOfCode > 5000
+   orderby f.NbLinesOfCode descending
+select new { f, f.NbLinesOfCode}
+
+// Files where NbLinesOfCode > 5000 are extremely complex 
+// and should be split in a smaller group of files. 
+// See the definition of the NbLinesOfCode metric here 
+// http://www.cppdepend.com/Metrics.aspx#NbLinesOfCode
+
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>Methods too complex - critical</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.CyclomaticComplexity > 20 && 
+  m.NestingDepth > 5
+  orderby m.CyclomaticComplexity descending,
+          m.NestingDepth descending
+select new { m, m.CyclomaticComplexity, m.NestingDepth }
+
+// Methods with CyclomaticComplexity > 20 and NestingDepth  > 5
+// are really too complex and should be split 
+// in smaller methods, or even types.
+// See the definition of the CyclomaticComplexity metric here 
+// http://www.cppdepend.com/Metrics.aspx#CC
+// See the definition of the NestingDepth metric here 
+// http://www.cppdepend.com/Metrics.aspx#NestingDepth]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="True"><![CDATA[// <Name>Methods with too many parameters - critical</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.NbParameters > 8
+  orderby m.NbParameters descending
+select new { m, m.NbParameters }
+
+// Methods with more than 8 parameters might be painful to call 
+// and might degrade performance. You should prefer using 
+// additional properties/fields to the declaring type to 
+// handle numerous states. Another alternative is to provide 
+// a class or structure dedicated to handle arguments passing 
+//  See the definition of the NbParameters metric here 
+// http://www.cppdepend.com/Metrics.aspx#NbParameters
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Quick summary of methods to refactor</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+                                    // Code Metrics' definitions
+  m.NbLinesOfCode > 30 ||           // http://www.cppdepend.com/Metrics.aspx#NbLinesOfCode
+  m.MaxNestedLoop > 3 ||       // http://www.cppdepend.com/Metrics.aspx#NbILInstructions
+  m.CyclomaticComplexity > 20 ||    // http://www.cppdepend.com/Metrics.aspx#CC
+  m.NestingDepth > 5 ||           // http://www.cppdepend.com/Metrics.aspx#ILNestingDepth
+  m.NbParameters > 5 ||             // http://www.cppdepend.com/Metrics.aspx#NbParameters
+  m.NbVariables > 8               // http://www.cppdepend.com/Metrics.aspx#NbVariables
+
+select new { m, m.NbLinesOfCode, m.MaxNestedLoop, m.CyclomaticComplexity, 
+              m.NestingDepth, 
+             m.NbParameters, m.NbVariables } ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods too big</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+   m.NbLinesOfCode > 30 
+   orderby m.NbLinesOfCode descending
+           
+select new { m, m.NbLinesOfCode}
+
+// Methods where NbLinesOfCode > 30 
+// are extremely complex and should be split in smaller methods.
+// See the definition of the NbLinesOfCode metric here 
+// http://www.cppdepend.com/Metrics.aspx#NbLinesOfCode]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods too complex</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.CyclomaticComplexity > 20 ||
+  m.MaxNestedLoop > 3 ||
+  m.NestingDepth > 5
+  orderby m.CyclomaticComplexity descending,
+          m.MaxNestedLoop descending,
+          m.NestingDepth descending
+select new { m, m.CyclomaticComplexity, 
+                m.MaxNestedLoop,
+                m.NestingDepth  }
+
+// Methods where CyclomaticComplexity > 20 
+// or MaxNestedLoop > 40
+// or NestingDepth > 4
+// are hard to understand and maintain
+// and should be split in smaller methods.
+// See the definition of the complexity metrics here:
+// http://www.cppdepend.com/Metrics.aspx#CC
+// http://www.cppdepend.com/Metrics.aspx#ILCC
+// http://www.cppdepend.com/Metrics.aspx#ILNestingDepth]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods potentially poorly commented</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.PercentageComment < 20 && 
+  m.NbLinesOfCode > 20  
+  orderby m.PercentageComment ascending
+select new { m, m.PercentageComment, m.NbLinesOfCode, m.NbLinesOfComment }
+
+// Methods where %Comment < 20 and that have 
+// at least 20 lines of code might need to be more commented.
+// See the definition of the Comments metric here 
+// http://www.cppdepend.com/Metrics.aspx#PercentageComment
+// http://www.cppdepend.com/Metrics.aspx#NbLinesOfComment ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods with too many parameters</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.NbParameters > 5 
+  orderby m.NbParameters descending
+select new { m, m.NbParameters }
+
+// Methods where NbParameters > 5 might be painful to call 
+// and might degrade performance. You should prefer using 
+// additional properties/fields to the declaring type to 
+// handle numerous states. Another alternative is to provide 
+// a class or structure dedicated to handle arguments passing 
+// See the definition of the NbParameters metric here 
+// http://www.cppdepend.com/Metrics.aspx#NbParameters]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods with too many local variables</Name>
+warnif count > 0 from m in JustMyCode.Methods where 
+  m.NbVariables > 15 
+  orderby m.NbVariables descending
+select new { m, m.NbVariables }
+
+// Methods where NbVariables > 8 are hard to understand and maintain.
+// Methods where NbVariables > 15 are extremely complex 
+// and should be split in smaller methods.
+// See the definition of the Nbvariables metric here 
+// http://www.cppdepend.com/Metrics.aspx#Nbvariables]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Files with too many methods</Name>
+warnif count > 0 from f in Files where 
+  f.NbMethods  > 50
+  orderby  f.NbMethods descending
+select new { f, f.NbMethods }
+
+// Files where NbMethods >50 might be hard to 
+// understand and maintain 
+// but there might be cases where it is relevant 
+// to have a high number of methods. 
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Files with too many variables</Name>
+warnif count > 0 from f in Files where 
+  f.NbFields > 50 
+  orderby f.NbFields descending
+select new { f, f.NbFields}
+
+// Files where NBFields > 50 and not IsEnumeration 
+// might be hard to understand and maintain 
+// but there might be cases where it is relevant 
+// to have a high number of fields. 
+]]></Query>
+    </Group>
+    <Group Name="Code Quality Regression" Active="True" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>From now, all methods added or refactored should respect basic quality principles</Name>
+warnif count > 0 from m in JustMyCode.Methods where
+
+// *** Only new or modified methods since Baseline for Comparison ***
+ (m.WasAdded() || m.CodeWasChanged()) &&
+ 
+// Low Quality methods// Metrics' definitions
+(  m.NbLinesOfCode > 30 ||          // http://www.cppdepend.com/Metrics.aspx#NbLinesOfCode
+   m.CyclomaticComplexity > 20 ||   // http://www.cppdepend.com/Metrics.aspx#CC
+   m.MaxNestedLoop > 50 || // http://www.cppdepend.com/Metrics.aspx#ILCC
+   m.NestingDepth > 4 ||          // http://www.cppdepend.com/Metrics.aspx#ILNestingDepth
+   m.NbParameters > 5 ||            // http://www.cppdepend.com/Metrics.aspx#NbParameters
+   m.NbVariables > 8 )             // http://www.cppdepend.com/Metrics.aspx#NbVariables
+   
+select new { m, m.NbLinesOfCode, m.CyclomaticComplexity, 
+             m.MaxNestedLoop, m.NestingDepth, 
+             m.NbParameters, m.NbVariables }  
+
+
+// This rule warns if a method with
+// low-quality has been added or refactored.
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>From now, all files added or refactored should respect basic quality principles</Name>
+warnif count > 0 from f in JustMyCode.Files where
+
+// *** Only match new or modified types since Baseline for Comparison ***
+(f.WasAdded() || f.CodeWasChanged()) &&
+
+
+
+// Low Quality types     Metrics' definitions are available here:
+//     http://www.cppdepend.com/Metrics.aspx#MetricsOnTypes
+(  // Types with too many methods
+   f.NbMethods > 50 ||
+
+   // Types with too many fields
+   f.NbFields > 50 
+
+   
+)
+select new { f,f.NbMethods,f.NbFields}
+
+
+// This rule warns if a file with
+// low-quality has been added or refactored.
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Avoid making complex methods even more complex (Source CC)</Name>
+// To visualize changes in code, right-click a matched method and select:
+//  - Compare older and newer versions of source file
+//  - Compare older and newer versions disassembled with Reflector
+
+warnif count > 0 
+from m in JustMyCode.Methods where
+  m.IsPresentInBothBuilds() &&
+  m.CodeWasChanged()
+
+let oldCC = m.OlderVersion().CyclomaticComplexity
+where oldCC > 6 && m.CyclomaticComplexity > oldCC 
+
+select new { m,
+    oldCC ,
+    newCC = m.CyclomaticComplexity ,
+    oldLoc = m.OlderVersion().NbLinesOfCode,
+    newLoc = m.NbLinesOfCode,
+}
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Avoid making large methods even larger</Name>
+// To visualize changes in code, right-click a matched method and select:
+//  - Compare older and newer versions of source file
+//  - Compare older and newer versions disassembled with Reflector
+
+warnif count > 0 
+from m in JustMyCode.Methods where
+  m.IsPresentInBothBuilds() &&
+  m.CodeWasChanged()
+
+
+let oldLoc = m.OlderVersion().NbLinesOfCode
+where oldLoc > 15 && m.NbLinesOfCode > oldLoc
+
+select new { m,
+    oldLoc,
+    newLoc = m.NbLinesOfCode,
+}
+
+]]></Query>
+    </Group>
+    <Group Name="Diagnostics Queries" Active="True" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>All diagnostics</Name> 
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang"
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Preprocessor issues</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("_pp_")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Conversion Issues</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("conversion")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Deprecated Usage</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("deprecated")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Unused Symbols</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("unused")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Switch Issues</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && (issue.Type.Contains("switch") || issue.Type.Contains("case"))
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Struct Issues</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("_struct")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Comparison Issues</Name>
+warnif count > 0
+from issue in Issues  where issue.ToolName=="Clang" && issue.Type.Contains("comparison")
+select new { issue,issue.FilePath,issue.BeginLine }
+        ]]></Query>
+    </Group>
+    <Group Name="Code Diff Summary" Active="True" ShownInReport="True">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>New Projects</Name>
+from a in Application.Projects where a.WasAdded()
+select new { a, a.NbLinesOfCode }
+
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Projects removed</Name>
+from a in codeBase.OlderVersion().Application.Projects where a.WasRemoved()
+select new { a, a.NbLinesOfCode }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Projects where code was changed</Name>
+from a in Application.Projects where a.CodeWasChanged()
+select new { a, a.NbLinesOfCode, 
+             oldNbLinesOfCode = a.OlderVersion().NbLinesOfCode ,
+             delta = (int) a.NbLinesOfCode - a.OlderVersion().NbLinesOfCode }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>New files</Name>
+from f in Application.Files where 
+ !f.ParentProject.WasAdded() &&
+  f.WasAdded()
+select new { f, f.NbLinesOfCode }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Files removed</Name>
+from f in codeBase.OlderVersion().Application.Files where 
+ !f.ParentProject.WasRemoved() &&
+  f.WasRemoved()
+select new { f, f.NbLinesOfCode }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Files where code was changed</Name>
+from f in Application.Files where f.CodeWasChanged()
+select new { f, f.NbLinesOfCode, 
+             oldNbLinesOfCode = f.OlderVersion().NbLinesOfCode ,
+             delta = (int) f.NbLinesOfCode - f.OlderVersion().NbLinesOfCode }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>New methods</Name>
+from m in Application.Methods where 
+ !m.ParentType.WasAdded() &&
+  m.WasAdded()
+select new { m, m.NbLinesOfCode }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods removed</Name>
+from m in codeBase.OlderVersion().Application.Methods where 
+ !m.ParentType.WasRemoved() &&
+  m.WasRemoved()
+select new { m, m.NbLinesOfCode }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods where code was changed</Name>
+// To visualize changes in code, right-click a matched method and select:
+//  - Compare older and newer versions of source file
+//  - Compare older and newer versions disassembled with Reflector
+
+from m in Application.Methods where m.CodeWasChanged()
+select new { m, m.NbLinesOfCode, 
+             oldNbLinesOfCode = m.OlderVersion().NbLinesOfCode ,
+             delta = (int?) m.NbLinesOfCode - m.OlderVersion().NbLinesOfCode }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods directly calling one or several methods changed</Name>
+let methodsChanged = Application.Methods.Where(m => m.CodeWasChanged()).ToHashSet()
+
+from m in JustMyCode.Methods.UsingAny(methodsChanged ) where
+  !m.CodeWasChanged() && 
+  !m.WasAdded()
+let methodsChangedCalled = m.MethodsCalled.Intersect(methodsChanged) 
+select new { m, methodsChangedCalled }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods indirectly calling one or several methods changed</Name>
+let methodsChanged = Application.Methods.Where(m => m.CodeWasChanged()).ToHashSet()
+
+// 'depth' represents a code metric defined on methods using
+// directly or indirectly any method where code was changed.
+let depth = JustMyCode.Methods.DepthOfIsUsingAny(methodsChanged) 
+
+from m in depth.DefinitionDomain where
+  !m.CodeWasChanged() && 
+  !m.WasAdded()
+
+let methodsChangedDirectlyUsed = m.MethodsCalled.Intersect(methodsChanged) 
+let depthOfUsingMethodsChanged = depth[m]
+orderby depthOfUsingMethodsChanged 
+
+select new { m, depthOfUsingMethodsChanged, methodsChangedDirectlyUsed }]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>New fields</Name>
+from f in Application.Fields where 
+ !f.ParentType.WasAdded() &&
+  f.WasAdded()
+select new { f }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Fields removed</Name>
+from f in codeBase.OlderVersion().Application.Fields where 
+ !f.ParentType.WasRemoved() &&
+  f.WasRemoved()
+select new { f }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Third party methods that were not used and that are now used</Name>
+from m in ThirdParty.Methods where 
+  m.IsUsedRecently() &&
+ !m.ParentType.IsUsedRecently()
+select m]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Third party methods that were used and that are not used anymore</Name>
+from m in codeBase.OlderVersion().Methods where 
+  m.IsNotUsedAnymore() &&
+ !m.ParentType.IsNotUsedAnymore()
+select m]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Third party fields that were not used and that are now used</Name>
+from f in ThirdParty.Fields where 
+  f.IsUsedRecently() &&
+ !f.ParentType.IsUsedRecently()
+select f]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Third party fields that were used and that are not used anymore</Name>
+from f in codeBase.OlderVersion().Fields where 
+  f.IsNotUsedAnymore() &&
+ !f.ParentType.IsNotUsedAnymore()
+select f
+]]></Query>
+    </Group>
+    <Group Name="Naming Conventions" Active="True" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Types name should begin with an Upper character</Name>
+warnif count > 0 (from t in Types where 
+ !t.NameLike (@"^[A-Z]")      // The name of a type should begin with an Upper letter.
+  && // Except if it is generated by compiler or ...
+ !t.IsThirdParty && !t.IsGlobal
+select new { t, t.NbLinesOfCode }).Take(10)
+
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Avoid types with name too long</Name>
+warnif count > 0 from t in Application.Types 
+where !t.IsGeneratedByCompiler && !t.IsThirdParty
+
+where t.SimpleName.Length > 35 
+select new { t, t.SimpleName }
+
+      ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Avoid methods with name too long</Name>
+warnif count > 0 from m in Application.Methods where 
+ !m.IsGeneratedByCompiler 
+  && m.SimpleName.Length > 35 && !m.IsThirdParty
+
+select new { m, m.SimpleName }
+
+// The regex matches methods with name longer 
+// than 35 characters.
+// Method Name doesn't contain the type and namespace 
+// prefix, FullName does.
+// The regex computes the method name length from 
+// the beginning until the first open parenthesis 
+// or first lower than (for generic methods).
+      ]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Avoid fields with name too long</Name>
+warnif count > 0 from f in Application.Fields where
+ !f.IsGeneratedByCompiler &&
+  f.Name.Length > 35 && !f.IsThirdParty
+select f
+
+// The regex matches fields with name longer 
+// than 35 characters.
+// Field Name doesn't contain the type and 
+// namespace prefix, FullName does.
+      ]]></Query>
+    </Group>
+    <Group Name="Plugins" Active="True" ShownInReport="False">
+      <Group Name="CppCheck Queries" Active="True" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>All CppCheck Violations</Name>
+warnif count>0          
+from issue in Issues  where issue.ToolName=="CppCheck"
+select new { issue,issue.FilePath,issue.BeginLine }]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most Classes violating CppCheck rules</Name>
+(from t in Types where t.Issues.Where(i=>i.ToolName=="CppCheck").Count()>0
+orderby t.Issues.Count() descending
+select new { t,nbIssues=t.Issues.Count() }).Take(100)
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most Methods violating CppCheck rules</Name>
+(from m in Methods where m.Issues.Where(i=>i.ToolName=="CppCheck").Count()>0
+orderby m.Issues.Count() descending
+select new { m,nbIssues=m.Issues.Count() }).Take(100)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most Project violating CppCheck rules</Name>
+(from p in Projects where p.Issues.Where(i=>i.ToolName=="CppCheck").Count()>0
+orderby p.Issues.Count() descending
+select new { p,nbIssues=p.Issues.Count() }).Take(5)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most Recurrent CppCheck violations</Name>
+let groups = Application.Issues.Where(i=>i.ToolName=="CppCheck").GroupBy(t => t.Type)
+
+from g in groups
+orderby g.Count() descending
+select new { issue=g.FirstOrDefault(),count=g.Count() }]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Popular Methods violating CppCheck rules</Name>
+(from m in Methods where m.Issues.Where(i=>i.ToolName=="CppCheck").Count()>0
+orderby m.MethodsCallingMe.Count() descending
+select new { m,NbCallingMethods= m.MethodsCallingMe }).Take(100)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Popular Classes violating CppCheck rules</Name>
+from t in Types where t.Issues.Where(i=>i.ToolName=="CppCheck").Count()>0
+orderby t.TypesUsingMe.Count() descending
+select new { t,ClassesUsingMe= t.TypesUsingMe}]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>CppCheck Violation Famillies with Most violations </Name>
+let groups = Application.Issues.Where(i=>i.ToolName=="CppCheck").GroupBy(t => t.IssueFamilly)
+
+from g in groups
+orderby g.Count() descending
+select new { issue=g.FirstOrDefault(),count=g.Count() }]]></Query>
+      </Group>
+      <Group Name="CPD Queries" Active="True" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>All CPD duplications</Name>
+from issue in Issues  where issue.ToolName=="CPD"
+select new { issue,issue.FilePath,issue.BeginLine }]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most duplicated code lines</Name>
+from issue in Issues  where issue.ToolName=="CPD"
+orderby issue.NbDuplicationCopies descending
+select new { issue,issue.NbDuplicationCopies }]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Big duplications</Name>
+from issue in Issues  where issue.ToolName=="CPD"
+orderby issue.NbLinesCopied descending
+select new { issue,issue.NbLinesCopied }]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Classes containing big duplication</Name>
+(from t in Types where t.Issues.Where(i=>i.ToolName=="CPD" && i.NbLinesCopied>100).Count()>0
+orderby t.Issues.Count() descending
+select new { t }).Take(100)
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Classes containing Many duplications</Name>
+(from t in Types where t.Issues.Where(i=>i.ToolName=="CPD" && i.NbDuplicationCopies>10).Count()>0
+orderby t.Issues.Count() descending
+select new { t }).Take(100)]]></Query>
+      </Group>
+    </Group>
+    <Group Name="Statistics" Active="False" ShownInReport="False">
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most used files </Name>
+(from f in Application.Files orderby f.FilesUsingMe.Count() descending
+ select new { f, f.FilesUsingMe }).Take(50)
+
+]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most used methods (Rank)</Name>
+(from m in Application.Methods orderby m.Rank descending
+ select new { m, m.Rank }).Take(50)
+
+// MethodRank values are computed by applying 
+// the Google PageRank  algorithm on the graph of 
+// methods' dependencies. Methods with high Rank 
+// are the most used ones. See the definition of 
+// the MethodRank metric here:
+// http://www.cppdepend.com/Metrics.aspx#MethodRank]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most used types (#TypesUsingMe )</Name>
+(from t in Types orderby t.NbTypesUsingMe descending
+ select new { t, t.TypesUsingMe }).Take(50)]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Most used methods (#MethodsCallingMe )</Name>
+(from m in Methods orderby m.NbMethodsCallingMe descending
+ select new { m, m.MethodsCallingMe }).Take(50)]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Methods that use many other methods (#MethodsCalled )</Name>
+(from m in Application.Methods orderby m.NbMethodsCalled descending
+ select new { m, m.MethodsCalled }).Take(50)]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>High-level to low-level Projects (Level)</Name>
+from a in Application.Projects orderby a.Level descending
+select new { a, a.Level }
+
+// Classify Projects by their Level values.
+// See the definition of the projectLevel metric here:
+// http://www.cppdepend.com/Metrics.aspx#Level]]></Query>
+      <Query Active="True" DisplayList="False" DisplayStat="False" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>High-level to low-level methods (Level)</Name>
+from m in Application.Methods orderby m.Level descending
+select new { m, m.Level }
+
+// Classify methods by their Level values.
+// See the definition of the MethodLevel metric here:
+// http://www.cppdepend.com/Metrics.aspx#Level]]></Query>
+    </Group>
+    <Group Name="Samples of Custom rules" Active="False" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that the project P1 is not using the project P2</Name>
+warnif count > 0 from a in Application.Projects where 
+  a.IsUsing ("P2".AllowNoMatch().MatchProject()) &&
+  (a.Name == @"P1")
+select a
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that the project P1 is only using the Projects P2 or P3</Name>
+warnif count > 0 from a in Application.Projects where 
+  ( !a.IsUsing ("P2".AllowNoMatch().MatchProject()) ||
+    !a.IsUsing ("P3".AllowNoMatch().MatchProject()) ||
+    a.ProjectsUsed.Count() != 2) // Must not be used more than 2 Projects 
+&& 
+  (a.Name == @"P1")
+select new { a, a.ProjectsUsed }
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that only 3 Projects are using Project P</Name>
+warnif count != 3 from a in Application.Projects where 
+  a.IsUsing ("P".AllowNoMatch().MatchProject())
+select a
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that all methods that call Foo.Fct1() also call Foo.Fct2(Int32)</Name>
+warnif count > 0 from m in Application.Methods where 
+   m.IsUsing ("Foo.Fct1()".AllowNoMatch()) &&
+  !m.IsUsing ("Foo.Fct2(Int32)".AllowNoMatch())
+select m
+]]></Query>
+      <Group Name="Custom Naming Conventions" Active="False" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that all types that derive from Foo, has a name that ends up with Foo</Name>
+warnif count > 0 from t in Application.Types where 
+   t.DeriveFrom ("Foo".AllowNoMatch().MatchType()) &&
+  !t.NameLike (@"Foo$")
+select new { t, t.NbLinesOfCode }
+]]></Query>
+      </Group>
+    </Group>
+    <Group Name="Trend Metrics" Active="True" ShownInReport="False">
+      <Group Name="Code Size" Active="True" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Lines of Code" Unit="LoC" />  
+Application.Projects.Sum(a => a.NbLinesOfCode)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Lines of Code (JustMyCode)" Unit="LoC" />
+JustMyCode.Methods.Sum(m => m.NbLinesOfCode)
+
+// JustMyCode is defined by code queries prefixed with 'notmycode' 
+// in the group 'Defining JustMyCode'.
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Lines of Code (NotMyCode)" Unit="LoC" />
+Application.Methods.Where(m => !JustMyCode.Contains(m))
+                   .Sum(m => m.NbLinesOfCode)
+
+// JustMyCode is defined by code queries prefixed with 'notmycode' 
+// in the group 'Defining JustMyCode'.
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Lines of Code Added since the Baseline" Unit="LoC" />  
+( from a in Application.Projects
+  let nbLocAdded = a.IsPresentInBothBuilds() ? 
+                   a.NbLinesOfCode - (int)a.OlderVersion().NbLinesOfCode :
+                   a.NbLinesOfCode
+  select nbLocAdded)
+.Sum(loc => loc)
+
+// A value is computed by this Trend Metric query
+// only if a Baseline for Comparison is provided.
+// See Project Properties > Analysis > Baseline for Comparison
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Source Files" Unit="Source Files" />
+Application.Projects.SelectMany(
+  a => a.SourceDecls.Select(sd => sd.SourceFile.FilePathString.ToLower()))
+.Distinct()
+.Count()
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Lines of Comments" Unit="Lines" />  
+Application.Projects.Sum(a => a.NbLinesOfComment)
+
+// So far comments are only extracted from C# source code.
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Projects" Unit="Projects" />
+Application.Projects.Count()
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Types" Unit="Types" />
+Application.Types.Count()]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Classes" Unit="Types" />
+Application.Types.Count(t => t.IsClass && !t.IsGeneratedByCompiler)
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Structures" Unit="Types" />
+Application.Types.Count(t => t.IsStructure)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Methods" Unit="Methods" />
+Application.Methods.Count(m => !m.IsGeneratedByCompiler)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Fields" Unit="Fields" />
+Application.Fields.Count(f => 
+   !f.IsEnumValue && 
+   !f.IsGeneratedByCompiler && 
+   !f.ParentType.IsEnumeration)
+
+]]></Query>
+      </Group>
+      <Group Name="Maximum and Average" Active="True" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max # Lines of Code for Methods (JustMyCode)" Unit="LoC" />
+JustMyCode.Methods
+          .Max(m => m.NbLinesOfCode)
+          .ToEnumerable().Sum(loc => loc)
+
+// Here is the code query to get the (JustMyCode) method with largest # Lines of Code
+// JustMyCode.Methods.OrderByDescending(m => m.NbLinesOfCode).Take(1).Select(m => new {m, m.NbLinesOfCode})
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average # Lines of Code for Methods" Unit="LoC" />
+Application.Methods.Where(m => m.NbLinesOfCode > 0)
+                   .Average(m => m.NbLinesOfCode)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average # Lines of Code for Methods with at least 3 Lines of Code" Unit="LoC" />
+Application.Methods.Where(m => m.NbLinesOfCode >= 3)
+                   .Average(m => m.NbLinesOfCode)
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max # Lines of Code for Types (JustMyCode)" Unit="LoC" />
+JustMyCode.Types
+          .Max(t => t.NbLinesOfCode)
+          .ToEnumerable().Sum(loc => loc)
+
+// Here is the code query to get the (JustMyCode) type with largest # Lines of Code
+// JustMyCode.Types.OrderByDescending(t => t.NbLinesOfCode).Take(1).Select(t => new {t, t.NbLinesOfCode})
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average # Lines of Code for Types" Unit="LoC" />
+Application.Types.Where(t => t.NbLinesOfCode > 0)
+                 .Average(t => t.NbLinesOfCode)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max Cyclomatic Complexity for Methods" Unit="Paths" />
+Application.Methods
+          .Max(m => m.CyclomaticComplexity)
+          .ToEnumerable().Sum(loc => loc)
+
+// Here is the code query to get the most complex method, according to Cyclomatic Complexity
+// Application.Methods.OrderByDescending(m => m.CyclomaticComplexity).Take(1).Select(m => new {m, m.CyclomaticComplexity})
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max Nb Lines of code for Files" Unit="Paths" />
+Application.Files
+          .Max(f => f.NbLinesOfCode)
+          .ToEnumerable().Sum(loc => loc)
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average Cyclomatic Complexity for Methods" Unit="Paths" />
+Application.Methods.Where(m => m.NbLinesOfCode> 0)
+                   .Average(m => m.CyclomaticComplexity)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average Nb Lines of code for Files" Unit="Paths" />
+Application.Files.Where(f => f.NbLinesOfCode> 0)
+                   .Average(f => f.NbLinesOfCode)]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max Nesting Depth for Methods" Unit="Scopes" />
+Application.Methods
+          .Max(m => m.NestingDepth)
+          .ToEnumerable().Sum(loc => loc)
+
+// Here is the code query to get the method with highest NestingDepth.
+// Application.Methods.OrderByDescending(m => m.NestingDepth).Take(1).Select(m => new {m, m.NestingDepth})
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average Nesting Depth for Methods" Unit="Scopes" />
+Application.Methods.Average(m => m.NestingDepth)
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Max # of Methods for Types" Unit="Methods" />
+Application.Types
+           .Max(t => t.NbMethods) 
+           .ToEnumerable().Sum(loc => loc)
+
+// Here is the code query to get the (JustMyCode) type with largest # of Methods
+// JustMyCode.Types.OrderByDescending(t => t.NbMethods).Take(1).Select(t => new {t, t.Methods})
+
+]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="Average # Methods for Types" Unit="Methods" />
+Application.Types.Average(t => t.NbMethods)]]></Query>
+      </Group>
+      <Group Name="Third-Party Usage" Active="True" ShownInReport="False">
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Third-Party Projects Used" Unit="Projects" />
+ThirdParty.Projects.Count()]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Third-Party Types Used" Unit="Types" />
+ThirdParty.Types.Count()]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Third-Party Methods Used" Unit="Methods" />
+ThirdParty.Methods.Count()]]></Query>
+        <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <TrendMetric Name="# Third-Party Fields Used" Unit="Fields" />
+ThirdParty.Fields.Count()]]></Query>
+      </Group>
+    </Group>
+    <Group Name="Defining JustMyCode" Active="True" ShownInReport="False">
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Discard methods in a directory  from JustMyCode</Name>
+notmycode from m in Methods.Where(a=>a.SourceDecls.FirstOrDefault()!=null && a.SourceDecls.FirstOrDefault().SourceFile.DirectoryPath.Contains("path to exclude"))
+select m
+
+]]></Query>
+      <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Discard types in a directory  from JustMyCode</Name>
+notmycode from t in Types.Where(a=>a.SourceDecls.FirstOrDefault()!=null && a.SourceDecls.FirstOrDefault().SourceFile.DirectoryPath.Contains("path to exclude"))
+select t
+
+]]></Query>
+    </Group>
+  </Queries></NDepend>

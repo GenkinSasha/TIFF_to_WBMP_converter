@@ -1,0 +1,43 @@
+*** Creating Trace Output File 'LP-tiff-understand.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_lpc17xx.o"'
+### List of Objects: adding '"tiff_my.o"'
+### List of Objects: adding '"tif_codec.o"'
+### List of Objects: adding '"tif_fax3.o"'
+### List of Objects: adding '"tif_fax3sm.o"'
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"tif_aux.o"'
+### List of Objects: adding '"tif_close.o"'
+### List of Objects: adding '"tif_compress.o"'
+### List of Objects: adding '"tif_dir.o"'
+### List of Objects: adding '"tif_dirinfo.o"'
+### List of Objects: adding '"tif_dirread.o"'
+### List of Objects: adding '"tif_error.o"'
+### List of Objects: adding '"tif_extension.o"'
+### List of Objects: adding '"tif_flush.o"'
+### List of Objects: adding '"tif_getimage.o"'
+### List of Objects: adding '"tif_open.o"'
+### List of Objects: adding '"tif_predict.o"'
+### List of Objects: adding '"tif_read.o"'
+### List of Objects: adding '"tif_strip.o"'
+### List of Objects: adding '"tif_swab.o"'
+### List of Objects: adding '"tif_tile.o"'
+### List of Objects: adding '"tif_version.o"'
+### List of Objects: adding '"tif_warning.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "startup_lpc17xx.o" "tiff_my.o" "tif_codec.o" "tif_fax3.o" "tif_fax3sm.o" "main.o" "tif_aux.o" "tif_close.o" "tif_compress.o" "tif_dir.o" "tif_dirinfo.o" "tif_dirread.o" "tif_error.o" "tif_extension.o" "tif_flush.o" "tif_getimage.o" "tif_open.o" "tif_predict.o" "tif_read.o" "tif_strip.o" "tif_swab.o" "tif_tile.o" "tif_version.o" "tif_warning.o" 
+--strict --scatter "LP-tiff-understand.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LP-tiff-understand.map" -o LP-tiff-understand.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'LP-tiff-understand.axf'
+### ADS-LD Command File: 'LP-tiff-understand.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'LP-tiff-understand.lnp', Handle=0x00000514
+### Writing '.lnp' file
+### ADS-LD Command file 'LP-tiff-understand.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 129 errors
+### Updating obj list
+### LDADS_file() completed.

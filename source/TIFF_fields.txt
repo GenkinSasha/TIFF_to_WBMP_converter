@@ -1,0 +1,336 @@
+#define	TIFFTAG_STRIPBYTECOUNTS		279	/* bytes counts for strips */
+td->td_nstrips
+//tif->tif_dir.td_stripbytecount = array[td->td_nstrips]
+//tif->tif_size
+//td->td_stripoffset[strip]
+//td_stripsperimage
+//tif->tif_dir.td_nstrips = TIFFNumberOfStrips(tif);  
+Fax3SetupState(): sp->b.rowpixels
+tif: (right)
+{
+    tif_name = 0x41a620 <__onexitend> "\377\377\377\377\377\377\377\377", 
+    tif_fd = 0, 
+    tif_mode = 0, 
+    tif_flags = 2561, 
+    tif_diroff = 2202, 
+    tif_nextdiroff = 0, 
+    tif_dirlist = 0x32598, 
+    tif_dirlistsize = 2, 
+    tif_dirnumber = 1, 
+    tif_dir = {
+        td_fieldsset = {55805378, 0, 2, 0}, 
+        td_imagewidth = 432, 
+        td_imagelength = 550, 
+        td_imagedepth = 1, 
+        td_tilewidth = 432, 
+        td_tilelength = 550, 
+        td_tiledepth = 1, 
+        td_subfiletype = 0, 
+        td_bitspersample = 1, 
+        td_sampleformat = 1, 
+        td_compression = 4, 
+        td_photometric = 0, 
+        td_threshholding = 1, 
+        td_fillorder = 1, 
+        td_orientation = 1, 
+        td_samplesperpixel = 1, 
+        td_rowsperstrip = 550, 
+        td_minsamplevalue = 0, 
+        td_maxsamplevalue = 1, 
+        td_resolutionunit = 2, 
+        td_planarconfig = 1, 
+        td_pagenumber = {0, 0}, 
+        td_extrasamples = 0, 
+        td_sampleinfo = 0x0, 
+        td_stripsperimage = 1, 
+        td_nstrips = 1, 
+        td_stripoffset = 0x32650, 
+        td_stripbytecount = 0x32670, 
+        td_stripbytecountsorted = 1, 
+        td_nsubifd = 0, 
+        td_subifd = 0x0, 
+        td_customValueCount = 1, 
+        td_customValues = 0x32990
+    }, 
+    tif_customdir = {
+        td_fieldsset = {0, 0, 0, 0}, 
+        td_imagewidth = 0, 
+        td_imagelength = 0, 
+        td_imagedepth = 0, 
+        td_tilewidth = 0, 
+        td_tilelength = 0, 
+        td_tiledepth = 0, 
+        td_subfiletype = 0, 
+        td_bitspersample = 0, 
+        td_sampleformat = 0, 
+        td_compression = 0, 
+        td_photometric = 0, 
+        td_threshholding = 0, 
+        td_fillorder = 0, 
+        td_orientation = 0, 
+        td_samplesperpixel = 0, 
+        td_rowsperstrip = 0, 
+        td_minsamplevalue = 0, 
+        td_maxsamplevalue = 0, 
+        td_resolutionunit = 0, 
+        td_planarconfig = 0, 
+        td_pagenumber = {0, 0}, 
+        td_extrasamples = 0, 
+        td_sampleinfo = 0x0, 
+        td_stripsperimage = 0, 
+        td_nstrips = 0, 
+        td_stripoffset = 0x0, 
+        td_stripbytecount = 0x0, 
+        td_stripbytecountsorted = 0, 
+        td_nsubifd = 0, 
+        td_subifd = 0x0, 
+        td_customValueCount = 0, 
+        td_customValues = 0x0
+    }, 
+    tif_header = {
+        common = {
+            tiff_magic = 18761, 
+            tiff_version = 42
+        }, 
+        classic = {
+            tiff_magic = 18761, 
+            tiff_version = 42, 
+            tiff_diroff = 2202
+        }, 
+        big = {
+            tiff_magic = 18761, 
+            tiff_version = 42, 
+            tiff_offsetsize = 2202, 
+            tiff_unused = 0, 
+            tiff_diroff = 0
+        }
+    }, 
+    tif_header_size = 8, 
+    tif_row = 4294967295, 
+    tif_curdir = 0, 
+    tif_curstrip = 4294967295, 
+    tif_curoff = 0, 
+    tif_dataoff = 0, 
+    tif_nsubifd = 0, 
+    tif_subifdoff = 0, 
+    tif_col = 4294967295, 
+    tif_curtile = 4294967295, 
+    tif_tilesize = -1, 
+    tif_decodestatus = 1, 
+    tif_fixuptags = 0x40d378 <Fax3FixupTags>, 
+    tif_setupdecode = 0x40d382 <Fax3SetupState>, 
+    tif_predecode = 0x40cce0 <Fax3PreDecode>, 
+    tif_setupencode = 0x40d382 <Fax3SetupState>, 
+    tif_encodestatus = 0, 
+    tif_preencode = 0x0, 
+    tif_postencode = 0x0, 
+    tif_decoderow = 0x40db53 <Fax4Decode>, 
+    tif_encoderow = 0x0, 
+    tif_decodestrip = 0x40db53 <Fax4Decode>, 
+    tif_encodestrip = 0x0, 
+    tif_decodetile = 0x40db53 <Fax4Decode>, 
+    tif_encodetile = 0x0, 
+    tif_close = 0x401efb <_TIFFvoid>, 
+    tif_seek = 0x401eae <_TIFFNoSeek>, 
+    tif_cleanup = 0x401efb <_TIFFvoid>, 
+    tif_deftilesize = 0x0, 
+    tif_data = 0x325c0 "", 
+    tif_scanlinesize = 54, 
+    tif_scanlineskew = 0, 
+    tif_rawdata = 0x0, 
+    tif_rawdatasize = 0, 
+    tif_rawdataoff = 0, 
+    tif_rawdataloaded = 0, 
+    tif_rawcp = 0x0, 
+    tif_rawcc = 0, 
+    tif_base = 0x35070 "II*", 
+    tif_size = 2426, 
+    tif_mapproc = 0x0, 
+    tif_unmapproc = 0x0, 
+    tif_clientdata = 0x35070, 
+    tif_readproc = 0x0, 
+    tif_writeproc = 0x0, 
+    tif_seekproc = 0x0, 
+    tif_closeproc = 0x0, 
+    tif_sizeproc = 0x0, 
+    tif_postdecode = 0x410427 <_TIFFNoPostDecode>, 
+    tif_fields = 0x32830, 
+    tif_nfields = 72, 
+    tif_foundfield = 0x415508 <tiffFields+1224>, 
+    tif_tagmethods = {
+        vsetfield = 0x40d692 <Fax3VSetField>, 
+        vgetfield = 0x40d866 <Fax3VGetField>, 
+        printdir = 0x0
+    }, 
+    tif_clientinfo = 0x0, 
+    tif_fieldscompat = 0x0, 
+    tif_nfieldscompat = 0
+}
+
+tif (my):
+{
+    tif_name = 0x41a620 <__onexitend> "\377\377\377\377\377\377\377\377",
+    tif_fd = 0, 
+    tif_mode = 0, 
+    tif_flags = 2561, 
+    tif_diroff = 2202 
+    tif_nextdiroff = 2202,//0 
+    tif_dirlist = 0x0, //0x32598
+    tif_dirlistsize = 0, //2 
+    tif_dirnumber = 0, //1
+    tif_dir = {
+        td_fieldsset = {0, 0, 0, 0}, //{55805378, 0, 2, 0}, 
+        td_imagewidth = 432
+        td_imagelength = 550
+        td_imagedepth = 1
+        td_tilewidth = 0, //432
+        td_tilelength = 0, //550
+        td_tiledepth = 0, //1
+        td_subfiletype = 0,
+        td_bitspersample = 1
+        td_sampleformat = 1 //private tags registered to SGI
+        td_compression = 4
+        td_photometric = 0, 
+        td_threshholding = 1
+        td_fillorder = 1
+        td_orientation = 1
+        td_samplesperpixel = 1 
+        td_rowsperstrip = 4294902310//550 
+        td_minsamplevalue = 0, 
+        td_maxsamplevalue = 0, //1
+        td_resolutionunit = 2
+        td_planarconfig = 1 //0
+        td_pagenumber = {0, 0}, 
+        td_extrasamples = 0, 
+        td_sampleinfo = 0x0, 
+        td_stripsperimage = 0, //1
+        td_nstrips = 0, //1
+        td_stripoffset = 0x0, //0x32650
+        td_stripbytecount = 0x0, //0x32670
+        td_stripbytecountsorted = 1
+        td_nsubifd = 0, 
+        td_subifd = 0x0, 
+        td_customValueCount = 0, //1
+        td_customValues = 0x0 // 0x32990
+    }, 
+    tif_customdir = {
+        td_fieldsset = {0, 0, 0, 0}, 
+        td_imagewidth = 0, 
+        td_imagelength = 0, 
+        td_imagedepth = 0, 
+        td_tilewidth = 0, 
+        td_tilelength = 0, 
+        td_tiledepth = 0, 
+        td_subfiletype = 0, 
+        td_bitspersample = 0, 
+        td_sampleformat = 0, 
+        td_compression = 0, 
+        td_photometric = 0, 
+        td_threshholding = 0, 
+        td_fillorder = 0, 
+        td_orientation = 0, 
+        td_samplesperpixel = 0, 
+        td_rowsperstrip = 0, 
+        td_minsamplevalue = 0, 
+        td_maxsamplevalue = 0, 
+        td_resolutionunit = 0, 
+        td_planarconfig = 0, 
+        td_pagenumber = {0, 0}, 
+        td_extrasamples = 0, 
+        td_sampleinfo = 0x0, 
+        td_stripsperimage = 0, 
+        td_nstrips = 0, 
+        td_stripoffset = 0x0, 
+        td_stripbytecount = 0x0, 
+        td_stripbytecountsorted = 0, 
+        td_nsubifd = 0, 
+        td_subifd = 0x0, 
+        td_customValueCount = 0, 
+        td_customValues = 0x0
+    }, 
+    tif_header = {
+        common = {
+            tiff_magic = 18761, 
+            tiff_version = 42
+        }, 
+        classic = {
+            tiff_magic = 18761, 
+            tiff_version = 42, 
+            tiff_diroff = 2202
+        }, 
+        big = {
+            tiff_magic = 18761, 
+            tiff_version = 42, 
+            tiff_offsetsize = 2202, 
+            tiff_unused = 0, 
+            tiff_diroff = 0
+        }
+    }, 
+    tif_header_size = 8, 
+    tif_row = 4294967295, 
+    tif_curdir = 65535, //0
+    tif_curstrip = 4294967295, 
+    tif_curoff = 0, 
+    tif_dataoff = 0, 
+    tif_nsubifd = 0, 
+    tif_subifdoff = 0, 
+    tif_col = 0, 
+    tif_curtile = 0, 
+    tif_tilesize = 0, //-1
+    tif_decodestatus = 1, 
+    tif_fixuptags = 0x401e3e <_TIFFNoFixupTags>, //<Fax3FixupTags>, 
+    tif_setupdecode = 0x401ef1 <_TIFFtrue>, // <Fax3SetupState>
+    tif_predecode = 0x401edd <_TIFFNoPreCode>, //<Fax3PreDecode>, 
+    tif_setupencode = 0x0, //<Fax3SetupState>, 
+    tif_encodestatus = 0, 
+    tif_preencode = 0x0, 
+    tif_postencode = 0x0, 
+    tif_decoderow = 0x401e48 <_TIFFNoRowDecode>, //<Fax4Decode>, 
+    tif_encoderow = 0x0, 
+    tif_decodestrip = 0x401e6a <_TIFFNoStripDecode>, //<Fax4Decode>, 
+    tif_encodestrip = 0x0, 
+    tif_decodetile = 0x401e8c <_TIFFNoTileDecode>, //<Fax4Decode>, 
+    tif_encodetile = 0x0, 
+    tif_close = 0x401efb <_TIFFvoid>, 
+    tif_seek = 0x401eae <_TIFFNoSeek>, 
+    tif_cleanup = 0x401efb <_TIFFvoid>, 
+    tif_deftilesize = 0x0, 
+    tif_data = 0x0, //0x325c0
+    tif_scanlinesize = 0, //54
+    tif_scanlineskew = 0, 
+    tif_rawdata = 0x0, 
+    tif_rawdatasize = 0, 
+    tif_rawdataoff = 0, 
+    tif_rawdataloaded = 0, 
+    tif_rawcp = 0x0, 
+    tif_rawcc = 0, 
+    tif_base = 0x35070 "II*", 
+    tif_size = 2426, 
+    tif_mapproc = 0x0, 
+    tif_unmapproc = 0x0, 
+    tif_clientdata = 0x35070, 
+    tif_readproc = 0x0, 
+    tif_writeproc = 0x0, 
+    tif_seekproc = 0x0, 
+    tif_closeproc = 0x0, 
+    tif_sizeproc = 0x0, 
+    tif_postdecode = 0x0, //<_TIFFNoPostDecode>, 
+    tif_fields = 0x0, 
+    tif_nfields = 0, 
+    tif_foundfield = 0x0, //x415508 <tiffFields+1224>,
+    tif_tagmethods = {
+        vsetfield = 0x0, //<Fax3VSetField>, 
+        vgetfield = 0x0, //<Fax3VGetField>, 
+        printdir = 0x0
+    }, 
+    tif_clientinfo = 0x0, 
+    tif_fieldscompat = 0x0, 
+    tif_nfieldscompat = 0
+}
+
+	tif->tif_dir.td_stripsperimage = tif->tif_dir.td_nstrips;
+	if (tif->tif_dir.td_planarconfig == PLANARCONFIG_SEPARATE)
+		tif->tif_dir.td_stripsperimage /= tif->tif_dir.td_samplesperpixel;
+		
+		tif->tif_data
+		TIFFSetCompressionScheme!!!
