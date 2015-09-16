@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -g -O0 --apcs=interwork 
--I C:\KEIL_MDK471a\ARM\RV31\INC 
--I C:\KEIL_MDK471a\ARM\CMSIS\Include 
--I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx 
--o "main.o" --omf_browse "main.crf" --depend "main.d" "source\main.c"

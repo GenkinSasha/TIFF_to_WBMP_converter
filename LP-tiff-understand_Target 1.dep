@@ -1,266 +1,0 @@
-Dependencies for Project 'LP-tiff-understand', Target 'Target 1': (DO NOT MODIFY !)
-F (.\startup_LPC17xx.s)(0x50879FFE)(--cpu Cortex-M3 -g --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx --list "startup_LPC17xx.lst" --xref -o "startup_LPC17xx.o" --depend "startup_LPC17xx.d")
-F (.\TIFF_codec\tiff_my.c)(0x54FE0188)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tiff_my.o" --omf_browse "tiff_my.crf" --depend "tiff_my.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_codec.c)(0x552FB91A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_codec.o" --omf_browse "tif_codec.crf" --depend "tif_codec.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_fax3.c)(0x553E810A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_fax3.o" --omf_browse "tif_fax3.crf" --depend "tif_fax3.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_fax3sm.c)(0x554370C0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_fax3sm.o" --omf_browse "tif_fax3sm.crf" --depend "tif_fax3sm.d")
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-I (TIFF_codec\tif_fax3.h)(0x553550B6)
-F (.\source\main.c)(0x5527BAD4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "main.o" --omf_browse "main.crf" --depend "main.d")
-I (source\..\TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_aux.c)(0x55391144)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_aux.o" --omf_browse "tif_aux.crf" --depend "tif_aux.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_close.c)(0x5505EFAA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_close.o" --omf_browse "tif_close.crf" --depend "tif_close.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_color.c)(0x4D070C34)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_color.o" --omf_browse "tif_color.crf" --depend "tif_color.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\math.h)(0x516EC836)
-F (.\TIFF_codec\tif_compress.c)(0x5537CA70)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_compress.o" --omf_browse "tif_compress.crf" --depend "tif_compress.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_dir.c)(0x553E7ACA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_dir.o" --omf_browse "tif_dir.crf" --depend "tif_dir.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_dirinfo.c)(0x553E7B0A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_dirinfo.o" --omf_browse "tif_dirinfo.crf" --depend "tif_dirinfo.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_dirread.c)(0x553D3E32)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_dirread.o" --omf_browse "tif_dirread.crf" --depend "tif_dirread.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_dirwrite.c)(0x552ABE60)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_dirwrite.o" --omf_browse "tif_dirwrite.crf" --depend "tif_dirwrite.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_dumpmode.c)(0x4D971C72)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_dumpmode.o" --omf_browse "tif_dumpmode.crf" --depend "tif_dumpmode.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_error.c)(0x5537BB68)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_error.o" --omf_browse "tif_error.crf" --depend "tif_error.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_extension.c)(0x5537BF72)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_extension.o" --omf_browse "tif_extension.crf" --depend "tif_extension.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_flush.c)(0x55293300)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_flush.o" --omf_browse "tif_flush.crf" --depend "tif_flush.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_getimage.c)(0x4FCEEC1A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_getimage.o" --omf_browse "tif_getimage.crf" --depend "tif_getimage.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_jbig.c)(0x54FF56D2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_jbig.o" --omf_browse "tif_jbig.crf" --depend "tif_jbig.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_jpeg.c)(0x54FF5724)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_jpeg.o" --omf_browse "tif_jpeg.crf" --depend "tif_jpeg.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_jpeg_12.c)(0x4B9779A4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_jpeg_12.o" --omf_browse "tif_jpeg_12.crf" --depend "tif_jpeg_12.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_luv.c)(0x4D971C72)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_luv.o" --omf_browse "tif_luv.crf" --depend "tif_luv.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdlib.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\math.h)(0x516EC836)
-I (TIFF_codec\uvcode.h)(0x4B9779A6)
-F (.\TIFF_codec\tif_lzma.c)(0x4EF2096A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_lzma.o" --omf_browse "tif_lzma.crf" --depend "tif_lzma.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_lzw.c)(0x4D971C72)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_lzw.o" --omf_browse "tif_lzw.crf" --depend "tif_lzw.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-I (TIFF_codec\tif_predict.h)(0x4B977AF2)
-F (.\TIFF_codec\tif_next.c)(0x4B977AF0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_next.o" --omf_browse "tif_next.crf" --depend "tif_next.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_ojpeg.c)(0x55009D98)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_ojpeg.o" --omf_browse "tif_ojpeg.crf" --depend "tif_ojpeg.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_open.c)(0x5539267E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_open.o" --omf_browse "tif_open.crf" --depend "tif_open.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_packbits.c)(0x4FF42868)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_packbits.o" --omf_browse "tif_packbits.crf" --depend "tif_packbits.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_pixarlog.c)(0x55009D6A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_pixarlog.o" --omf_browse "tif_pixarlog.crf" --depend "tif_pixarlog.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_predict.c)(0x5537C69A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_predict.o" --omf_browse "tif_predict.crf" --depend "tif_predict.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_print.c)(0x55292EAC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_print.o" --omf_browse "tif_print.crf" --depend "tif_print.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\ctype.h)(0x516EC836)
-F (.\TIFF_codec\tif_read.c)(0x5537CCB6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_read.o" --omf_browse "tif_read.crf" --depend "tif_read.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_strip.c)(0x55435DDC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_strip.o" --omf_browse "tif_strip.crf" --depend "tif_strip.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_swab.c)(0x552AC078)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_swab.o" --omf_browse "tif_swab.crf" --depend "tif_swab.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_thunder.c)(0x5500A264)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_thunder.o" --omf_browse "tif_thunder.crf" --depend "tif_thunder.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\assert.h)(0x516EC836)
-F (.\TIFF_codec\tif_tile.c)(0x4FCEEC1C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_tile.o" --omf_browse "tif_tile.crf" --depend "tif_tile.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_unix.c)(0x55009E76)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_unix.o" --omf_browse "tif_unix.crf" --depend "tif_unix.d")
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\errno.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdlib.h)(0x516EC836)
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (.\TIFF_codec\tif_version.c)(0x4B977AF2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_version.o" --omf_browse "tif_version.crf" --depend "tif_version.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_warning.c)(0x5537BB88)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_warning.o" --omf_browse "tif_warning.crf" --depend "tif_warning.d")
-I (TIFF_codec\tiffiop.h)(0x553E798E)
-I (TIFF_codec\tiff_conf.h)(0x551322AC)
-F (.\TIFF_codec\tif_write.c)(0x55391924)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I C:\KEIL_MDK471a\ARM\RV31\INC -I C:\KEIL_MDK471a\ARM\CMSIS\Include -I C:\KEIL_MDK471a\ARM\Inc\NXP\LPC17xx -o "tif_write.o" --omf_browse "tif_write.crf" --depend "tif_write.d")
-I (TIFF_codec\tiffiop.h)(0x54FB1740)
-I (TIFF_codec\tiff_conf.h)(0x55009E5C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\string.h)(0x516EC836)
-I (TIFF_codec\tiffio.h)(0x5014F592)
-I (TIFF_codec\tiff.h)(0x54FB15AC)
-I (TIFF_codec\tiffvers.h)(0x505D722C)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
-I (C:\KEIL_MDK471a\ARM\ARMCC\bin\..\include\stdarg.h)(0x516EC834)
-I (TIFF_codec\tif_dir.h)(0x4D5F7EA2)
-F (..\tiff-4.0.3\tools\tiffsplit.c)(0x4EA286C6)()
-F (..\tiff-4.0.3\tools\tiff2bw.c)(0x4C3587F0)()
-F (..\tiff-4.0.3\tools\tiff2pdf.c)(0x5010416C)()
-F (..\tiff-4.0.3\tools\tiff2ps.c)(0x4DE4B07A)()
-F (..\tiff-4.0.3\tools\tiff2rgba.c)(0x4D66B2AA)()
-F (..\tiff-4.0.3\tools\tiffcmp.c)(0x4B977AF2)()
-F (..\tiff-4.0.3\tools\tiffcp.c)(0x4D12F3EA)()
-F (..\tiff-4.0.3\tools\tiffcrop.c)(0x4D070C34)()
-F (..\tiff-4.0.3\tools\tiffdither.c)(0x4B977AF2)()
-F (..\tiff-4.0.3\tools\tiffdump.c)(0x4FDB6F16)()
-F (..\tiff-4.0.3\tools\tiffgt.c)(0x4C3587F0)()
-F (..\tiff-4.0.3\tools\tiffinfo.c)(0x4FCEEC1C)()
-F (..\tiff-4.0.3\tools\tiffmedian.c)(0x4B977AF2)()
-F (..\tiff-4.0.3\tools\tiffset.c)(0x5014F592)()
-F (..\tiff-4.0.3\tools\bmp2tiff.c)(0x4B977AF2)()
-F (..\tiff-4.0.3\tools\fax2tiff.c)(0x4B977AF2)()
