@@ -1,5 +1,0 @@
---cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork 
--I D:\Keil\ARM\RV31\INC 
--I D:\Keil\ARM\CMSIS\Include 
--I D:\Keil\ARM\Inc\NXP\LPC17xx 
---list ".\startup_LPC17xx.lst" --xref -o ".\startup_LPC17xx.o" --depend ".\startup_LPC17xx.d" "..\..\LP-tiff-f4\startup_LPC17xx.s"

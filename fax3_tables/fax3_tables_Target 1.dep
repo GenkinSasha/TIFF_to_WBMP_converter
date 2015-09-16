@@ -1,9 +1,0 @@
-Dependencies for Project 'fax3_tables', Target 'Target 1': (DO NOT MODIFY !)
-F (.\mkg3states.c)(0x55368EAC)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\NXP\LPC17xx -o "mkg3states.o" --omf_browse "mkg3states.crf" --depend "mkg3states.d")
-I (D:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x526E6CB2)
-I (D:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x50F9B5B0)
-I (D:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x50F9B5B0)
-I (..\TIFF_codec\tif_fax3.h)(0x553550B6)
-I (..\TIFF_codec\tiff.h)(0x54FB15AC)
-I (..\TIFF_codec\tiff_conf.h)(0x551322AC)
-F (..\..\LP-tiff-f4\startup_LPC17xx.s)(0x50879FFE)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\NXP\LPC17xx --list ".\startup_LPC17xx.lst" --xref -o ".\startup_LPC17xx.o" --depend ".\startup_LPC17xx.d")
